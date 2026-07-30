@@ -9,7 +9,7 @@
 // ==========================================
 
 // Substitua 'SEU_USUARIO' pelo seu nome de usuário do GitHub
-const GITHUB_USERNAME = 'SEU_USUARIO';
+const GITHUB_USERNAME = 'scandolara-rps';
 
 // Placeholders claros do EmailJS para configuração do usuário
 const EMAILJS_PUBLIC_KEY = 'SUA_PUBLIC_KEY';
