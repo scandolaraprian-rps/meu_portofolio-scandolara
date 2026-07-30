@@ -60,15 +60,21 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
     </div>
   `;
 
-  // Tratamento para fallback em ambiente de teste se o placeholder estiver ativo
-  const usuarioQuery = (username === 'SEU_USUARIO' || !username) ? 'octocat' : username;
+  // Tratamento para fallback em ambiente de teste se o placeholder estiver ativo ou vazio
+  let usuarioQuery = (username === 'SEU_USUARIO' || !username) ? 'octocat' : username;
 
   try {
     // Requisição fetch na API pública do GitHub
-    const resposta = await fetch(`https://api.github.com/users/${usuarioQuery}/repos?sort=updated&per_page=12`);
+    let resposta = await fetch(`https://api.github.com/users/${usuarioQuery}/repos?sort=updated&per_page=12`);
+
+    // Se o usuário não existir (404), tenta carregar repositórios do 'octocat' como demonstração
+    if (resposta.status === 404 && usuarioQuery !== 'octocat') {
+      usuarioQuery = 'octocat';
+      resposta = await fetch(`https://api.github.com/users/octocat/repos?sort=updated&per_page=12`);
+    }
 
     if (!resposta.ok) {
-      throw new Error(`Erro na API do GitHub: Status ${resposta.status}`);
+      throw new Error(`HTTP ${resposta.status}`);
     }
 
     // Transforma a resposta da requisição em JSON
@@ -119,11 +125,10 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
     });
 
   } catch (erro) {
-    console.error('Erro ao consumir API do GitHub:', erro);
     listaProjetos.innerHTML = `
       <div class="error-state">
         <p>Não foi possível carregar os repositórios do usuário <strong>"${usuarioQuery}"</strong>.</p>
-        <small>Substitua <code>'SEU_USUARIO'</code> no arquivo <code>app.js</code> pelo seu nome de usuário do GitHub.</small>
+        <small>Insira um nome de usuário válido no campo de busca para carregar os projetos.</small>
       </div>
     `;
   }
@@ -175,11 +180,8 @@ function configurarFormularioContato() {
       btnEnviar.disabled = true;
     }
 
-    // Verifica se os placeholders do EmailJS foram substituídos por chaves ativas
-    const temChavesEmailJS = 
-      EMAILJS_PUBLIC_KEY !== 'd60FQQ3M1dHmz9gFO' &&
-      EMAILJS_SERVICE_ID !== 'service_j0h7ffo' &&
-      EMAILJS_TEMPLATE_ID !== 'template_vtuhgtv';
+    // Verifica se as chaves do EmailJS estão configuradas
+    const temChavesEmailJS = Boolean(EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID);
 
     if (temChavesEmailJS && typeof emailjs !== 'undefined') {
       // Dispara o e-mail utilizando a função do SDK emailjs.sendForm
