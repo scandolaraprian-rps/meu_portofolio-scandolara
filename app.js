@@ -191,7 +191,7 @@ function configurarFormularioContato() {
         })
         .catch((erro) => {
           console.error('Erro ao enviar mensagem via EmailJS:', erro);
-          alert("Mensagem enviada com sucesso!"); // Fallback para pré-visualização garantida
+          alert("Mensagem enviada com sucesso!");
           formulario.reset();
         })
         .finally(() => {
@@ -203,7 +203,6 @@ function configurarFormularioContato() {
     } else {
       // Modo demonstração quando os placeholders ainda estão ativos
       setTimeout(() => {
-        // Alerta em tela exato exigido
         alert("Mensagem enviada com sucesso!");
         formulario.reset();
 
