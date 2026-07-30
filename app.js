@@ -177,9 +177,9 @@ function configurarFormularioContato() {
 
     // Verifica se os placeholders do EmailJS foram substituídos por chaves ativas
     const temChavesEmailJS = 
-      EMAILJS_PUBLIC_KEY !== 'SUA_PUBLIC_KEY' &&
-      EMAILJS_SERVICE_ID !== 'SEU_SERVICE_ID' &&
-      EMAILJS_TEMPLATE_ID !== 'SEU_TEMPLATE_ID';
+      EMAILJS_PUBLIC_KEY !== 'd60FQQ3M1dHmz9gFO' &&
+      EMAILJS_SERVICE_ID !== 'service_j0h7ffo' &&
+      EMAILJS_TEMPLATE_ID !== 'template_vtuhgtv';
 
     if (temChavesEmailJS && typeof emailjs !== 'undefined') {
       // Dispara o e-mail utilizando a função do SDK emailjs.sendForm
