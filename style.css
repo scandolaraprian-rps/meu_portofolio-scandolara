@@ -169,7 +169,7 @@ body {
 
 .user-bio {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.125rem;
   line-height: 1.4;
   color: var(--text-primary);
@@ -502,7 +502,7 @@ body {
 
 .loading-state p {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.25rem;
   animation: pulse 1.5s infinite alternate;
 }
