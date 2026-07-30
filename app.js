@@ -9,7 +9,7 @@
 // ==========================================
 
 // Substitua 'SEU_USUARIO' pelo seu nome de usuário do GitHub
-const GITHUB_USERNAME = 'scandolara-rps';
+const GITHUB_USERNAME = 'scandolaraprian-rps';
 
 // Placeholders claros do EmailJS para configuração do usuário
 const EMAILJS_PUBLIC_KEY = 'd60FQQ3M1dHmz9gFO';
@@ -61,7 +61,7 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
   `;
 
   // Tratamento para fallback em ambiente de teste se o placeholder estiver ativo ou vazio
-  let usuarioQuery = (username === 'scandolara-rps' || !username) ? 'octocat' : username;
+  let usuarioQuery = (username === 'scandolaraprian-rps' || !username) ? 'octocat' : username;
 
   try {
     // Requisição fetch na API pública do GitHub
