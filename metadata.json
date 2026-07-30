@@ -1,0 +1,6 @@
+{
+  "name": "Meu Portfólio Dinâmico",
+  "description": "Portfólio dinâmico com integração à API do GitHub e formulário de contato via EmailJS",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
