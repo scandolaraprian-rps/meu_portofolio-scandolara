@@ -14,7 +14,7 @@ const GITHUB_USERNAME = 'scandolara-rps';
 // Placeholders claros do EmailJS para configuração do usuário
 const EMAILJS_PUBLIC_KEY = 'd60FQQ3M1dHmz9gFO';
 const EMAILJS_SERVICE_ID = 'service_j0h7ffo';
-const EMAILJS_TEMPLATE_ID = 'SEU_TEMPLATE_ID';
+const EMAILJS_TEMPLATE_ID = 'template_vtuhgtv';
 
 // ==========================================
 // INICIALIZAÇÃO
