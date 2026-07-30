@@ -61,7 +61,7 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
   `;
 
   // Tratamento para fallback em ambiente de teste se o placeholder estiver ativo ou vazio
-  let usuarioQuery = (username === 'scandolara-rps' || !username) ? 'octocat' : username;
+  let usuarioQuery = (username === 'SEU_USUARIO' || !username) ? 'octocat' : username;
 
   try {
     // Requisição fetch na API pública do GitHub
