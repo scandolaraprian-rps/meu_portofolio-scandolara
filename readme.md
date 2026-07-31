@@ -89,9 +89,7 @@ Para conectar o seu próprio formulário de e-mail no arquivo `app.js`:
 Sinta-se à vontade para entrar em contato, discutir oportunidades ou explorar conexões profissionais!
 
 - **Email**: [scandolaraprian@gmail.com](mailto:scandolaraprian@gmail.com)
-- **LinkedIn**: [Preencha com o link do seu LinkedIn](https://www.linkedin.com/in/seu-perfil)
 - **GitHub**: [github.com/scandolaraprian-rps](https://github.com/scandolaraprian-rps)
-- **Portfólio Online**: [Link da sua aplicação publicada]
 
 ---
 
