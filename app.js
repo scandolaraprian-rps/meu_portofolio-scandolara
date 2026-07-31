@@ -60,14 +60,14 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
     </div>
   `;
 
-  // Tratamento para fallback em ambiente de teste se o placeholder estiver ativo ou vazio
-  let usuarioQuery = (username === 'scandolaraprian-rps' || !username) ? 'octocat' : username;
+  // Nome de usuário do GitHub a ser consultado
+  let usuarioQuery = (username === 'SEU_USUARIO' || !username) ? GITHUB_USERNAME : username;
 
   try {
     // Requisição fetch na API pública do GitHub
     let resposta = await fetch(`https://api.github.com/users/${usuarioQuery}/repos?sort=updated&per_page=12`);
 
-    // Se o usuário não existir (404), tenta carregar repositórios do 'octocat' como demonstração
+    // Se o usuário não for encontrado (404), busca do 'octocat' como demonstração de fallback
     if (resposta.status === 404 && usuarioQuery !== 'octocat') {
       usuarioQuery = 'octocat';
       resposta = await fetch(`https://api.github.com/users/octocat/repos?sort=updated&per_page=12`);
