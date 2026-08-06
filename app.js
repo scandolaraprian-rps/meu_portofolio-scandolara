@@ -20,11 +20,19 @@ const EMAILJS_TEMPLATE_ID = 'template_vtuhgtv';
 // INICIALIZAÇÃO
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializa o EmailJS se a chave pública for fornecida
+  // Inicializa o EmailJS...
   if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'SUA_PUBLIC_KEY') {
     emailjs.init(EMAILJS_PUBLIC_KEY);
   }
 
+  // Suas outras funções...
+  carregarRepositoriosGitHub();
+  configurarFormularioContato();
+  configurarBuscaGitHub();
+  
+  // NOVA FUNÇÃO AQUI:
+  configurarEfeitoDigitacao();
+});
   // Carrega os repositórios públicos do GitHub
   carregarRepositoriosGitHub();
 
@@ -235,3 +243,26 @@ Swal.fire({
     }
   });
 }
+
+// ==========================================
+// EFEITO DE MÁQUINA DE ESCREVER (TYPED.JS)
+// ==========================================
+function configurarEfeitoDigitacao() {
+  // Verifica se o elemento existe no HTML para evitar erros
+  const elemento = document.getElementById('texto-animado');
+  
+  if (elemento && typeof Typed !== 'undefined') {
+    new Typed('#texto-animado', {
+      strings: [
+        'Desenvolvedora Front-end.', 
+        'Estudante de Tecnologia.', 
+        'Criadora de Soluções.'
+      ],
+      typeSpeed: 60, // Velocidade que digita
+      backSpeed: 40, // Velocidade que apaga
+      backDelay: 1500, // Tempo de pausa antes de apagar
+      loop: true // Faz a animação se repetir para sempre
+    });
+  }
+}
+
