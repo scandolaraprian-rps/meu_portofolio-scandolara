@@ -249,9 +249,9 @@ function configurarEfeitoDigitacao() {
   if (elemento && typeof Typed !== 'undefined') {
     new Typed('#texto-animado', {
       strings: [
-        'Desenvolvedora Front-end.', 
+        'Desenvolvedor Front-end.', 
         'Estudante de Tecnologia.', 
-        'Criadora de Soluções.'
+        'Criador de Soluções.'
       ],
       typeSpeed: 60, // Velocidade que digita
       backSpeed: 40, // Velocidade que apaga
