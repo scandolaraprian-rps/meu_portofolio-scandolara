@@ -557,3 +557,38 @@ body {
 .footer-copy {
   font-weight: 700;
 }
+
+.spotlight-container {
+  position: relative;
+  display: inline-block; 
+  overflow: hidden; 
+  border-radius: 15px; /* Ajuste o arredondamento como preferir */
+}
+
+.spotlight-container img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Camada da luz invisível */
+.spotlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  background: radial-gradient(
+    400px circle at var(--x, 50%) var(--y, 50%), 
+    rgba(255, 255, 255, 0.3), 
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* O brilho só aparece quando o mouse passar por cima da caixa */
+.spotlight-container:hover .spotlight-overlay {
+  opacity: 1;
+}
+
