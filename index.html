@@ -35,16 +35,23 @@
         <!-- SIDEBAR: Header (Nome, Foto, Bio) e Contacto -->
         <aside class="sidebar">
           
-          <!-- 1. HEADER: Nome, Foto, Bio -->
+         <!-- 1. HEADER: Nome, Foto, Bio -->
           <header id="header" class="header-profile">
             <div class="profile-avatar-row">
-              <img 
-                id="user-photo" 
-                src="./foto_portofolio.webp" 
-                alt="Foto de Perfil de Rian P.S." 
-                class="profile-photo" 
-                onerror="this.onerror=null; this.src='./profile.jpg';"
-              />
+              
+              <!-- NOVO BLOCO DO HOLOFOTE INICIA AQUI -->
+              <div class="spotlight-container">
+                <img 
+                  id="user-photo" 
+                  src="./foto_portofolio.webp" 
+                  alt="Foto de Perfil de Rian P.S." 
+                  class="profile-photo" 
+                  onerror="this.onerror=null; this.src='./profile.jpg';"
+                />
+                <div class="spotlight-overlay"></div>
+              </div>
+              <!-- NOVO BLOCO DO HOLOFOTE TERMINA AQUI -->
+
               <div>
                 <h1 id="user-name" class="user-name">RIAN<br>P.S.</h1>
                 <span class="user-title-badge">Desenvolvedor Front-end Sênior</span>
