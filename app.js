@@ -261,3 +261,20 @@ function configurarEfeitoDigitacao() {
   }
 }
 
+const container = document.querySelector('.spotlight-container');
+const overlay = document.querySelector('.spotlight-overlay');
+
+if (container && overlay) {
+  container.addEventListener('mousemove', (e) => {
+    // Descobre as proporções do elemento na tela
+    const rect = container.getBoundingClientRect();
+    
+    // Calcula a posição do mouse relativa à caixa da imagem
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Envia essas posições de volta para as variáveis CSS
+    overlay.style.setProperty('--x', `${x}px`);
+    overlay.style.setProperty('--y', `${y}px`);
+  });
+}
