@@ -20,25 +20,20 @@ const EMAILJS_TEMPLATE_ID = 'template_vtuhgtv';
 // INICIALIZAÇÃO
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializa o EmailJS...
+  // Inicializa o EmailJS se a chave pública for fornecida
   if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'SUA_PUBLIC_KEY') {
     emailjs.init(EMAILJS_PUBLIC_KEY);
   }
 
-  // Suas outras funções...
-  carregarRepositoriosGitHub();
-  configurarFormularioContato();
-  configurarBuscaGitHub();
-  
-  // NOVA FUNÇÃO AQUI:
-  configurarEfeitoDigitacao();
-});
   // Carrega os repositórios públicos do GitHub
   carregarRepositoriosGitHub();
 
   // Configura os eventos de formulário e busca
   configurarFormularioContato();
   configurarBuscaGitHub();
+  
+  // Configura o efeito de máquina de escrever
+  configurarEfeitoDigitacao();
 });
 
 // ==========================================
