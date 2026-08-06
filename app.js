@@ -188,7 +188,17 @@ function configurarFormularioContato() {
       emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this, EMAILJS_PUBLIC_KEY)
         .then(() => {
           // Alerta exato conforme diretriz
-          alert("Mensagem enviada com sucesso!");
+          // APAGUE ISTO:
+// alert("Mensagem enviada com sucesso!");
+
+// COLOQUE ISTO:
+Swal.fire({
+  title: 'Mensagem Enviada!',
+  text: 'Obrigado pelo contato. Retornarei o mais breve possível.',
+  icon: 'success',
+  confirmButtonText: 'Fechar',
+  confirmButtonColor: '#1A1A1A' /* Cor preta para combinar com o seu tema Brutalista */
+});
           formulario.reset();
         })
         .catch((erro) => {
