@@ -203,7 +203,16 @@ Swal.fire({
         })
         .catch((erro) => {
           console.error('Erro ao enviar mensagem via EmailJS:', erro);
-          alert("Mensagem enviada com sucesso!");
+          
+          // Novo alerta de ERRO do SweetAlert2
+          Swal.fire({
+            title: 'Ops!',
+            text: 'Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.',
+            icon: 'error',
+            confirmButtonText: 'Fechar',
+            confirmButtonColor: '#1A1A1A'
+          });
+          
           formulario.reset();
         })
         .finally(() => {
