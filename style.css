@@ -68,7 +68,7 @@ body {
   flex-direction: column;
   border-left: 1px solid var(--border-black);
   border-right: 1px solid var(--border-black);
-  background-color: var(--bg-primary);
+  background-color: transparent;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
