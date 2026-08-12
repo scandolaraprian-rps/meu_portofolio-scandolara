@@ -625,3 +625,14 @@ body {
   object-fit: cover;
   border: 2px solid var(--border-black);
 }
+
+/* EFEITO SNOWFALL (NEVE NO FUNDO) */
+#snowfall-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Fica no fundo */
+  pointer-events: none; /* Garante que não bloqueie os cliques nos botões/links */
+}
