@@ -5,19 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,600;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
-  --bg-primary: #FAF9F6;
-  --bg-secondary: #F0EEE9;
-  --bg-card: #FFFFFF;
-  --bg-dark: #1A1A1A;
-  --text-primary: #1A1A1A;
-  --text-secondary: #4A4A4A;
-  --text-muted: #71717A;
-  --text-light: #FAF9F6;
-  --accent-color: #2563EB;
-  --border-black: #1A1A1A;
-  --border-light: #E4E4E7;
-  --shadow-brutal: 6px 6px 0px 0px #1A1A1A;
-  --shadow-hover: 8px 8px 0px 0px #2563EB;
+  --bg-primary: #020914; /* Azul profundo (Fundo principal) */
+  --bg-secondary: #0a1424; /* Azul um pouco mais claro (Sidebar) */
+  --bg-card: #0a1424; /* Fundo dos cards */
+  --bg-dark: #000000;
+  --text-primary: #F3F4F6; /* Textos brancos para leitura no fundo escuro */
+  --text-secondary: #D1D5DB; /* Textos de apoio em cinza claro */
+  --text-muted: #9CA3AF;
+  --text-light: #020914; 
+  --accent-color: #3B82F6; /* Azul um pouco mais vibrante para dar destaque */
+  --border-black: #1E293B; /* Bordas adaptadas para o modo escuro */
+  --border-light: #334155;
+  --shadow-brutal: 6px 6px 0px 0px #000000;
+  --shadow-hover: 8px 8px 0px 0px #3B82F6;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
