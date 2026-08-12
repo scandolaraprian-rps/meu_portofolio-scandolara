@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       slideShadows: true,
     },
   });
+
+  iniciarNeve(); 
+});
   // ----------------------------------
 });
 
@@ -294,4 +297,71 @@ if (container && overlay) {
     overlay.style.setProperty('--x', `${x}px`);
     overlay.style.setProperty('--y', `${y}px`);
   });
+}
+
+// ==========================================
+// EFEITO SNOWFALL (FUNDO ANIMADO)
+// ==========================================
+function iniciarNeve() {
+  const canvas = document.getElementById('snowfall-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  const particulas = [];
+  const numParticulas = 80; // Quantidade de "flocos" na tela
+
+  // Ajusta o tamanho se a janela mudar
+  window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
+
+  // Cria as partículas iniciais
+  for (let i = 0; i < numParticulas; i++) {
+    particulas.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      raio: Math.random() * 2 + 1, // Tamanho
+      velocidadeY: Math.random() * 0.8 + 0.3, // Velocidade de queda
+      velocidadeX: Math.random() * 0.5 - 0.25, // Balanço lateral
+      opacidade: Math.random() * 0.4 + 0.1
+    });
+  }
+
+  // Função de animação que roda em looping
+  function animar() {
+    ctx.clearRect(0, 0, width, height);
+
+    particulas.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.raio, 0, Math.PI * 2);
+      // Cor cinza claro translúcida para fundo claro
+      ctx.fillStyle = `rgba(160, 160, 170, ${p.opacidade})`; 
+      ctx.fill();
+
+      // Movimentação
+      p.y += p.velocidadeY;
+      p.x += p.velocidadeX;
+
+      // Se a partícula sair da tela por baixo, volta para cima
+      if (p.y > height) {
+        p.y = 0 - p.raio;
+        p.x = Math.random() * width;
+      }
+      // Efeito de vento contínuo nas bordas laterais
+      if (p.x > width) p.x = 0;
+      if (p.x < 0) p.x = width;
+    });
+
+    requestAnimationFrame(animar);
+  }
+
+  animar();
 }
