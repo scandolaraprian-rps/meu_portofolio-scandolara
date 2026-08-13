@@ -196,7 +196,7 @@ body {
 
 /* Seção de Contacto (Card Brutalista na Sidebar) */
 .contacto-card {
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-black);
   padding: 24px;
   box-shadow: var(--shadow-brutal);
@@ -355,7 +355,7 @@ body {
 
 .github-search-bar input {
   flex: 1;
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-black);
   padding: 6px 12px;
   font-family: var(--font-mono);
@@ -406,7 +406,7 @@ body {
 
 /* Cards Dinâmicos de Projetos */
 .card-projeto {
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-black);
   padding: 24px;
   display: flex;
@@ -496,7 +496,7 @@ body {
   grid-column: 1 / -1;
   text-align: center;
   padding: 48px 24px;
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-black);
 }
 
