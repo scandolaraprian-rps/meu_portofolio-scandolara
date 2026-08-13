@@ -136,7 +136,7 @@ body {
   border-radius: 9999px;
   border: 2px solid var(--border-black);
   object-fit: cover;
-  background-color: #FFFFFF;
+  background-color: transparent; /* <-- ALTERADO PARA TRANSPARENTE */
   filter: grayscale(20%);
   transition: filter var(--transition-normal), transform var(--transition-normal);
 }
@@ -339,7 +339,7 @@ body {
 /* Controle de Busca GitHub */
 .github-search-section {
   padding: 16px 40px;
-  background-color: rgba(240, 238, 233, 0.5);
+  background-color: rgba(10, 20, 36, 0.5); /* <-- NOVA COR ESCURA */
   border-bottom: 1px solid var(--border-black);
   display: flex;
   align-items: center;
@@ -594,7 +594,7 @@ body {
 
 .carousel-section {
   padding: 60px 0;
-  background: var(--bg-primary);
+  background: transparent; /* <-- ALTERADO PARA TRANSPARENTE */
   border-top: 1px solid var(--border-black);
 }
 
