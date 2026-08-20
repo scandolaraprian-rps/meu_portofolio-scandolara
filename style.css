@@ -361,6 +361,11 @@ body {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   outline: none;
+   color: var(--text-primary);
+}
+
+.github-search-bar input::placeholder {
+  color: var(--text-muted); /* Cinza claro definido nas suas variáveis */
 }
 
 .github-search-bar input:focus {
