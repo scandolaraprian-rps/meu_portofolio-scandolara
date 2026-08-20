@@ -95,11 +95,10 @@ async function carregarRepositoriosGitHub(username = GITHUB_USERNAME) {
     let resposta = await fetch(`https://api.github.com/users/${usuarioQuery}/repos?sort=updated&per_page=12`);
 
     // Se o usuário não for encontrado (404), busca do 'octocat' como demonstração de fallback
-    if (resposta.status === 404 && usuarioQuery !== 'octocat') {
-      usuarioQuery = 'octocat';
-      resposta = await fetch(`https://api.github.com/users/octocat/repos?sort=updated&per_page=12`);
-    }
-
+    if (resposta.status === 404 && usuarioQuery !== GITHUB_USERNAME) {
+  usuarioQuery = GITHUB_USERNAME;
+  resposta = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`);
+}
     if (!resposta.ok) {
       throw new Error(`HTTP ${resposta.status}`);
     }
