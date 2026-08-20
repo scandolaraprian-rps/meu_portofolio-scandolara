@@ -49,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
       modifier: 1,
       slideShadows: true,
     },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   });
 
   iniciarNeve(); 
